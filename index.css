@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Inter:wght@700&family=Roboto:wght@400;500;600;700&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+main{
+width:100%;
+height:100vh;
+background-color: #79d25e;
+padding-top:2rem;
+position: relative;
+}
+
+.scores-section{
+    display: flex;
+    justify-content: space-between;
+    padding:.5rem 1rem;
+    width:50%;
+    background-color: transparent;
+    border:2px solid white;
+    border-radius:5px;
+    margin: auto;
+    
+}
+
+.game-name{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color:white;
+    line-height: 46px;
+    letter-spacing: 2px;
+}
+
+.scores-wrapper{
+    display:flex;
+    gap:1rem;
+}
+
+.score-box{
+    background-color: white;
+    text-align: center;
+    padding:1rem 1rem 0 1rem;
+    border-radius: 10px;
+    min-width: 125px;
+    
+}
+
+.heading{
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 19px;
+    letter-spacing: 1px;
+    color:#656565;
+
+}
+
+.score-heading{
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 19px;
+    letter-spacing: 1px;
+    color:#656565;
+}
+
+.user-score,.computer-score{
+    font-weight: 700;
+    font-size: 4.25rem;
+    line-height: 19px;
+    letter-spacing: 1px;
+    color: #252525;
+    line-height: 80px;
+
+}
+
+
+/* game-rules */
+
+.game-rules-container{
+    display: none;
+    position:absolute;
+    width:280px;
+    /* height:300px; */
+    border:7px solid white;
+    border-radius: 12px;
+    background-color: #004429;
+    right:2vw;
+}
+
+.game-rules-container .game-rules-heading{
+    font-weight: 500;
+    font-size: 1.75rem;
+    line-height: 33.98px;
+    letter-spacing: 1px;
+    color:white;
+    text-align: center;
+    margin:16px 0;
+}
+
+
+
+.game-rules-container .game-instructions{
+    font-weight: 400;
+    font-size: .9rem;
+    line-height: 15px;
+    color:yellow;
+    margin:0 16px 16px 32px;
+    /* text-align: center; */
+    
+}
+
+.game-rules-container .game-instructions p{
+    color:white;
+}
+
+ul li{
+    list-style-type: square;
+    color:yellow;
+}
+
