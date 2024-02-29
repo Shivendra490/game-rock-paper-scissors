@@ -79,7 +79,7 @@ position: relative;
 /* game-rules */
 
 .game-rules-container{
-    display: none;
+    /* display: none; */
     position:absolute;
     width:280px;
     /* height:300px; */
@@ -87,6 +87,7 @@ position: relative;
     border-radius: 12px;
     background-color: #004429;
     right:2vw;
+    bottom:15vh;
 }
 
 .game-rules-container .game-rules-heading{
@@ -105,9 +106,9 @@ position: relative;
     font-weight: 400;
     font-size: .9rem;
     line-height: 15px;
-    color:yellow;
+    /* color:yellow; */
     margin:0 16px 16px 32px;
-    /* text-align: center; */
+  
     
 }
 
@@ -119,4 +120,140 @@ ul li{
     list-style-type: square;
     color:yellow;
 }
+
+.triangle-shape{
+    width:810px;
+    margin:10rem auto;
+}
+
+/* li::marker{
+    content:'■';
+    list-style-type: square;
+    font-size: 20px;
+    color:yellow;
+    
+} */
+
+.controls{
+    height:19rem;
+}
+
+.line1{
+    display: inline-block;
+    width:250px;
+    height:16px;
+    background-color: #2c4c22 ;
+    transform-origin: top right;
+    transform: rotate(-125deg);
+    position: relative;
+    z-index:1;
+    
+}
+.line2{
+    display: inline-block;
+    width:300px;
+    height:16px;
+    background-color: #2c4c22 ;
+    position: relative;
+    /* border:16px solid #2c4c22 */
+
+
+}
+
+.line3{
+    display: inline-block;
+    width:250px;
+    height:16px;
+    background-color: #2c4c22 ;
+    transform-origin: top left;
+    transform: rotate(125deg);
+    position: relative;
+    /* border:16px solid #2c4c22 */
+
+}
+
+.rock-paper-common{
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translate(-50%,-50%);
+    
+}
+
+.scissors{
+    
+        position: absolute;
+        top:0;
+        right:0;
+        transform: translate(50%,-50%);
+        outline:16px solid #BD00FF;
+    
+}
+
+.rock{
+    outline:16px solid #0074B6
+}
+
+
+.paper{
+    outline:16px solid #FFA943
+}
+
+
+
+.circle{
+    width:110px;
+    height:110px;
+    background-color: white;
+    border-radius: 50%;
+    padding:1rem;
+    color:transparent;
+    z-index:1;
+    border:5x solid blue;
+    border:none;
+    cursor: pointer;
+}
+
+img{
+    height:100%;
+    width:100%;
+    object-fit: contain;
+}
+
+.paper-img{
+    transform: rotate(125deg);
+}
+
+.winner{
+    background-color: black;
+    width:150px;
+    height:150px;
+}
+
+
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap:1vw;
+    padding-right:1vw;
+    margin-top:32px;
+}
+
+.rules-btn,.next-btn{
+    width:120px;
+    height:40px;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background-color: transparent;
+    letter-spacing: 1px;
+    border:2px solid white;
+    border-radius: 10px;
+
+
+}
+
+
 

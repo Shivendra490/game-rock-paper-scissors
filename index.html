@@ -27,30 +27,58 @@
         </div>
       </section>
 
-      <!-- <img src="assets/rock.svg" />
-      <img src="assets/paper.svg" />
-      <img src="assets/scissors.svg" /> -->
       <div class="game-rules-container">
         <p class="game-rules-heading">Game Rules</p>
         <ul>
           <li class="game-instructions">
-           <p> Rock beats scissors, scissors beat paper, and paper beats rock.</p>
+            <p>
+              Rock beats scissors, scissors beat paper, and paper beats rock.
+            </p>
           </li>
           <li class="game-instructions">
-            <p>Agree ahead of time whether you’ll count off “rock, paper, scissors,
-                shoot” or just “rock, paper, scissors.”</p>
+            <p>
+              Agree ahead of time whether you’ll count off “rock, paper,
+              scissors, shoot” or just “rock, paper, scissors.”
+            </p>
           </li>
           <li class="game-instructions">
-           <p> Use rock, paper, scissors to settle minor decisions or simply play
-            to pass the time</p>
+            <p>
+              Use rock, paper, scissors to settle minor decisions or simply play
+              to pass the time
+            </p>
           </li>
           <li class="game-instructions">
-          <p>  If both players lay down the same hand, each player lays down
-            another hand</p>
+            <p>
+              If both players lay down the same hand, each player lays down
+              another hand
+            </p>
           </li>
         </ul>
       </div>
-     
+
+      <section class="controls">
+        <div class="triangle-shape">
+          <div class="line1">
+            <button id="paper" class="circle rock-paper-common paper">
+              <img class="paper-img" src="assets/paper.svg" />paper
+            </button>
+          </div>
+          <div class="line2">
+            <button id="rock" class="circle rock-paper-common rock">
+              <img src="assets/rock.svg" />rock
+            </button>
+            <button id="scissors" class="circle scissors">
+              <img src="assets/scissors.svg" />scissors
+            </button>
+          </div>
+          <div class="line3"></div>
+        </div>
+      </section>
+      <div class="buttons">
+        <button class="rules-btn">Rules</button>
+        <button class="next-btn">Next</button>
+      </div>
     </main>
+    <script src="index.js"></script>
   </body>
 </html>
