@@ -27,7 +27,8 @@
         </div>
       </section>
 
-      <div class="game-rules-container">
+      <div class="game-rules-container hide">
+        <button class="cross-wrapper"><img src="assets/cross.svg" /></button>
         <p class="game-rules-heading">Game Rules</p>
         <ul>
           <li class="game-instructions">
@@ -59,19 +60,54 @@
       <section class="controls">
         <div class="triangle-shape">
           <div class="line1">
-            <button id="paper" class="circle rock-paper-common paper">
+            <button
+              id="paper"
+              class="choices circle rock-paper-absolute-class paper"
+            >
               <img class="paper-img" src="assets/paper.svg" />paper
             </button>
           </div>
           <div class="line2">
-            <button id="rock" class="circle rock-paper-common rock">
+            <button
+              id="rock"
+              class="choices circle rock-paper-absolute-class rock"
+            >
               <img src="assets/rock.svg" />rock
             </button>
-            <button id="scissors" class="circle scissors">
+            <button
+              id="scissors"
+              class="choices circle scissors-absolute-class scissors"
+            >
               <img src="assets/scissors.svg" />scissors
             </button>
           </div>
           <div class="line3"></div>
+        </div>
+      </section>
+
+      <section class="result-section hide">
+        <div class="result-flex">
+          <div class="user-picked-wrapper">
+            <p class="heading" style="text-align: center; color: white">
+              User Picked
+            </p>
+            <button id="user-picked" class="circle">
+              <img class="user-picked-img" src="assets/paper.svg" />paper
+            </button>
+          </div>
+          <div class="result-content">
+            <p class="win-loss">YOU WIN</p>
+            <p class="against-pc">AGAINST PC</p>
+            <button class="play-again-btn">PLAY AGAIN</button>
+          </div>
+          <div class="pc-picked-wrapper">
+            <p class="heading" style="text-align: center; color: white">
+              PC Picked
+            </p>
+            <button id="pc-picked" class="circle">
+              <img class="pc-picked-img" src="assets/paper.svg" />paper
+            </button>
+          </div>
         </div>
       </section>
       <div class="buttons">
