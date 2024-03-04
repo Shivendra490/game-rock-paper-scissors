@@ -45,34 +45,47 @@ crossButton.addEventListener("click", () => {
 });
 playAgainButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    window.location.reload();
+    let spans = document.querySelectorAll(".result-section span");
+    if (spans.length > 0) {
+      for (let span of spans) {
+        span.remove();
+      }
+    }
+    nextButton.classList.add("hide");
+    document.querySelector(".controls").classList.remove("hide");
+    resultSection.classList.add("hide");
+    winnerWrapper.classList.add("hide");
+    scoresSection.classList.remove("hide");
   });
 });
 
 function showResult(userChoice, cpuChoice, userWinLoss) {
   let playAgainOrReplay = "PLAY AGAIN";
   let againstPcContent = "AGAINST PC";
-  let spans = "";
-  for (let n = 1; n <= 10; n++) {
-    spans += `<span style="--i: ${n}"></span>`;
-  }
 
   userCount.textContent = userScore;
   cpuCount.textContent = cpuScore;
-  userPicked.classList.add(userChoice);
-  pcPicked.classList.add(cpuChoice);
+  userPicked.className = `circle ${userChoice}`;
+  pcPicked.className = `circle ${cpuChoice}`;
+
   userPickedImg.setAttribute("src", `assets/${userChoice}.svg`);
   pcPickedImg.setAttribute("src", `assets/${cpuChoice}.svg`);
   if (userWinLoss === "WIN") {
     nextButton.classList.remove("hide");
     winOrLoss.textContent = "YOU WIN";
-
-    userAnimation.innerHTML += spans;
+    for (let n = 1; n <= 10; n++) {
+      let span = document.createElement("span");
+      span.style = `--i:${n}`;
+      userAnimation.append(span);
+    }
   }
   if (userWinLoss === "LOSS") {
     winOrLoss.textContent = "YOU LOSS";
-
-    pcAnimation.innerHTML += spans;
+    for (let n = 1; n <= 10; n++) {
+      let span = document.createElement("span");
+      span.style = `--i:${n}`;
+      pcAnimation.append(span);
+    }
   }
   if (userWinLoss === "TIE") {
     winOrLoss.textContent = "TIE UP";
