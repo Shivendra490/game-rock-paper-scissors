@@ -1,7 +1,7 @@
 let scoresSection = document.querySelector(".scores-section");
 let choiceButtons = document.querySelectorAll(".choices");
-let uScore = document.querySelector(".user-score");
-let cScore = document.querySelector(".computer-score");
+let userCount = document.querySelector(".user-score");
+let cpuCount = document.querySelector(".computer-score");
 let crossButton = document.querySelector(".cross-wrapper");
 let gameRules = document.querySelector(".game-rules-container");
 let rulesButton = document.querySelector(".rules-btn");
@@ -16,13 +16,13 @@ let nextButton = document.querySelector(".next-btn");
 let winnerWrapper = document.querySelector(".winner-wrapper");
 let userAnimation = document.querySelector(".user-animation");
 let pcAnimation = document.querySelector(".pc-animation");
+let againstPC = document.querySelector(".against-pc");
 
-
-let scores = JSON.parse(localStorage.getItem("SCORES"));
+let scores = JSON.parse(localStorage.getItem("RPS_SCORES"));
 let userScore = scores?.userScore || 0;
 let cpuScore = scores?.cpuScore || 0;
-uScore.textContent = userScore;
-cScore.textContent = cpuScore;
+userCount.textContent = userScore;
+cpuCount.textContent = cpuScore;
 
 function computerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -37,44 +37,28 @@ nextButton.addEventListener("click", () => {
   nextButton.classList.add("hide");
 });
 
-// playAgainButtons[1].addEventListener("click", () => {
-//   console.log("abc");
-//   userPicked.className = "circle";
-//   pcPicked.className = "circle";
-//   nextButton.classList.add('hide')
-//   document.querySelector(".controls").classList.remove("hide");
-//   resultSection.classList.add("hide");
-// });
-
-playAgainButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    console.log("abc");
-    location.reload();
-    // userPicked.className = "circle";
-    // pcPicked.className = "circle";
-    // nextButton.classList.add('hide')
-    // // userAnimation.innerHTML=userOld
-    // // pcAnimation.innerHTML=pcOld;
-    // document.querySelector(".controls").classList.remove("hide");
-    // resultSection.classList.add("hide");
-  });
-});
-
 rulesButton.addEventListener("click", () => {
   gameRules.classList.remove("hide");
 });
 crossButton.addEventListener("click", () => {
   gameRules.classList.add("hide");
 });
+playAgainButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    window.location.reload();
+  });
+});
 
 function showResult(userChoice, cpuChoice, userWinLoss) {
+  let playAgainOrReplay = "PLAY AGAIN";
+  let againstPcContent = "AGAINST PC";
   let spans = "";
   for (let n = 1; n <= 10; n++) {
     spans += `<span style="--i: ${n}"></span>`;
   }
 
-  uScore.textContent = userScore;
-  cScore.textContent = cpuScore;
+  userCount.textContent = userScore;
+  cpuCount.textContent = cpuScore;
   userPicked.classList.add(userChoice);
   pcPicked.classList.add(cpuChoice);
   userPickedImg.setAttribute("src", `assets/${userChoice}.svg`);
@@ -82,19 +66,23 @@ function showResult(userChoice, cpuChoice, userWinLoss) {
   if (userWinLoss === "WIN") {
     nextButton.classList.remove("hide");
     winOrLoss.textContent = "YOU WIN";
+
     userAnimation.innerHTML += spans;
   }
   if (userWinLoss === "LOSS") {
     winOrLoss.textContent = "YOU LOSS";
+
     pcAnimation.innerHTML += spans;
   }
   if (userWinLoss === "TIE") {
     winOrLoss.textContent = "TIE UP";
-    document.querySelector(".against-pc").innerHTML = "<span>&nbsp;</span>";
-    playAgainButtons[0].textContent = "REPLAY";
+    againstPcContent = "<span>&nbsp;</span>";
+    playAgainOrReplay = "REPLAY";
   }
+  againstPC.innerHTML = againstPcContent;
+  playAgainButtons[0].textContent = playAgainOrReplay;
   let scores = { userScore, cpuScore };
-  localStorage.setItem("SCORES", JSON.stringify(scores));
+  localStorage.setItem("RPS_SCORES", JSON.stringify(scores));
   document.querySelector(".controls").classList.add("hide");
   resultSection.classList.remove("hide");
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Inter:wght@700&family=Roboto:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -78,8 +78,6 @@ main {
   color: #252525;
 }
 
-/* game-rules */
-
 .game-rules-container {
   position: absolute;
   width: 280px;
@@ -142,18 +140,6 @@ ul li {
   justify-content: center;
 
   margin-top: 20vh;
-}
-
-/* li::marker{
-    content:'■';
-    list-style-type: square;
-    font-size: 20px;
-    color:yellow;
-    
-} */
-
-.controls {
-  /* height: 19rem; */
 }
 
 .line1 {
@@ -449,6 +435,11 @@ ul li {
 
   .result-content {
     padding: 2rem;
+  }
+
+  .pc-picked-wrapper,
+  .user-picked-wrapper {
+    gap: 20px;
   }
 
   .circle {
