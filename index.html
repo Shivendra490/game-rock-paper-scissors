@@ -10,8 +10,9 @@
     <main>
       <section class="scores-section">
         <div class="game-name">
-          Rock <br />Paper<br />
-          Scissors
+          <p>ROCK </p>
+          <p>PAPER </p>
+          <p>SCISSORS</p>
         </div>
         <div class="scores-wrapper">
           <div class="score-box">
@@ -86,33 +87,43 @@
       </section>
 
       <section class="result-section hide">
-        <div class="result-flex">
-          <div class="user-picked-wrapper">
-            <p class="heading" style="text-align: center; color: white">
-              User Picked
-            </p>
+        <div class="user-picked-wrapper">
+          <p class="heading" style="text-align: center; color: white">
+            USER PICKED
+          </p>
+          <div class="user-animation">
             <button id="user-picked" class="circle">
               <img class="user-picked-img" src="assets/paper.svg" />paper
             </button>
           </div>
-          <div class="result-content">
-            <p class="win-loss">YOU WIN</p>
-            <p class="against-pc">AGAINST PC</p>
-            <button class="play-again-btn">PLAY AGAIN</button>
-          </div>
-          <div class="pc-picked-wrapper">
-            <p class="heading" style="text-align: center; color: white">
-              PC Picked
-            </p>
+        </div>
+        <div class="result-content">
+          <p class="win-loss">YOU WIN</p>
+          <p class="against-pc">AGAINST PC</p>
+          <button class="play-again-btn">PLAY AGAIN</button>
+        </div>
+        <div class="pc-picked-wrapper">
+          <p class="heading" style="text-align: center; color: white">
+            PC PICKED
+          </p>
+          <div class="pc-animation">
             <button id="pc-picked" class="circle">
               <img class="pc-picked-img" src="assets/paper.svg" />paper
             </button>
           </div>
         </div>
       </section>
+      <section class="winner-wrapper hide">
+        <div class="stars">
+          <img class="trophy" src="assets/trophy.svg" />
+        </div>
+        <div class="hurray">HURRAY!!</div>
+        <p class="won-the-game">YOU WON THE GAME</p>
+        <button class="play-again-btn">PLAY AGAIN</button>
+      </section>
       <div class="buttons">
         <button class="rules-btn">Rules</button>
-        <button class="next-btn">Next</button>
+        <button class="next-btn hide">Next</button>
       </div>
     </main>
     <script src="index.js"></script>

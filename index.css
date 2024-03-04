@@ -9,7 +9,7 @@
 main {
   width: 100%;
   min-height: 100vh;
-  background-color: #79d25e;
+  background-color: rgb(121, 210, 94);
   padding-top: 2rem;
   position: relative;
 }
@@ -17,7 +17,7 @@ main {
 .scores-section {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
   width: 60%;
   background-color: transparent;
   border: 2px solid white;
@@ -26,11 +26,10 @@ main {
 }
 
 .game-name {
-  /* font-size: 2.5rem; */
   font-size: clamp(20px, 4vw, 42px);
   font-weight: 600;
   color: white;
-  /* line-height: 46px; */
+
   line-height: clamp(25px, 4vw, 46px);
   letter-spacing: 2px;
 }
@@ -46,23 +45,24 @@ main {
   padding: 1rem 1rem 0 1rem;
   border-radius: 10px;
   flex: 1;
-  /* min-width: 125px; */
+  width: 12vw;
 }
 
 .heading {
   font-weight: 600;
-  /* font-size: 1rem; */
+
   font-size: clamp(14px, 1.4vw, 20px);
-  line-height: 19px;
+
+  text-align: center;
   letter-spacing: 1px;
   color: #656565;
 }
 
 .score-heading {
   font-weight: 700;
-  /* font-size: 1rem; */
+
   font-size: clamp(14px, 1.4vw, 20px);
-  line-height: 19px;
+  text-align: center;
   letter-spacing: 1px;
   color: #656565;
 }
@@ -70,27 +70,26 @@ main {
 .user-score,
 .computer-score {
   font-weight: 700;
-  /* font-size: 4.25rem; */
+
   font-size: clamp(20px, 5vw, 75px);
-  /* line-height: 19px; */
+
   line-height: clamp(25px, 6vw, 82px);
   letter-spacing: 1px;
   color: #252525;
-  /* line-height: 80px; */
 }
 
 /* game-rules */
 
 .game-rules-container {
-  /* display: none; */
   position: absolute;
   width: 280px;
-  /* height:300px; */
+
   border: 7px solid white;
   border-radius: 12px;
   background-color: #004429;
   right: 2vw;
   bottom: 15vh;
+  z-index: 1000;
 }
 
 .cross-wrapper {
@@ -100,10 +99,12 @@ main {
   padding: 8px;
   border-radius: 50%;
   border: 5px solid white;
+  padding: 0.25rem;
   position: absolute;
   right: 0;
   top: 0;
   transform: translate(50%, -70%);
+  cursor: pointer;
 }
 .cross-wrapper .cross {
   width: 100%;
@@ -137,11 +138,10 @@ ul li {
 }
 
 .triangle-shape {
-  /* width:810px; */
   display: flex;
   justify-content: center;
-  /* width:76vw; */
-  margin-top: 10rem;
+
+  margin-top: 20vh;
 }
 
 /* li::marker{
@@ -153,13 +153,13 @@ ul li {
 } */
 
 .controls {
-  height: 19rem;
+  /* height: 19rem; */
 }
 
 .line1 {
   display: inline-block;
-  /* width:250px; */
-  width: clamp(80px, 25vw, 250px);
+
+  width: clamp(80px, 40vw, 300px);
   height: 16px;
   background-color: #2c4c22;
   transform-origin: top right;
@@ -169,8 +169,8 @@ ul li {
 }
 .line2 {
   display: inline-block;
-  /* width:300px; */
-  width: clamp(80px, 25vw, 250px);
+
+  width: clamp(80px, 40vw, 300px);
   height: 16px;
   background-color: #2c4c22;
   position: relative;
@@ -178,8 +178,8 @@ ul li {
 
 .line3 {
   display: inline-block;
-  /* width:250px; */
-  width: clamp(80px, 25vw, 250px);
+
+  width: clamp(80px, 40vw, 300px);
   height: 16px;
   background-color: #2c4c22;
   transform-origin: top left;
@@ -212,41 +212,73 @@ ul li {
 .rock {
   border: 16px solid #0074b6 !important;
 }
-.won-animation {
-  animation: ripple 2s infinite;
-}
-
-@keyframes ripple {
-  0% {
-    box-shadow: 0 0 0 0.7rem rgba(33, 77, 35, 0.2),
-      0 0 0 1.5rem rgba(48, 120, 43, 0.2), 0 0 0 5rem rgba(57, 150, 34, 0.2);
-  }
-  100% {
-    box-shadow: 0 0 0 1.5rem rgba(21, 145, 50, 0.2),
-      0 0 0 4rem rgba(88, 185, 19, 0.2), 0 0 0 8rem rgba(40, 235, 5, 0);
-  }
-}
 
 .paper {
   border: 16px solid #ffa943 !important;
 }
 
 .circle {
-  /* width:110px;
-    height:110px; */
-  width: clamp(100px, 13vw, 150px);
-  height: clamp(100px, 13vw, 150px);
+  width: clamp(100px, 18vw, 180px);
+  height: clamp(100px, 18vw, 180px);
   background-color: white;
   border-radius: 50%;
-  padding: 1rem;
+  padding: 1.5rem;
   color: transparent;
   z-index: 1;
-  /* border:5x solid blue; */
   border: none;
-  cursor: pointer;
+  box-shadow: 3px 0px 21px 1px #00000033 inset;
 }
 
-img {
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.user-animation,
+.pc-animation {
+  z-index: 6;
+  width: clamp(100px, 18vw, 180px);
+  height: clamp(100px, 18vw, 180px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.user-animation button,
+.pc-animation button {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.user-animation span,
+.pc-animation span {
+  position: absolute;
+  border-radius: 50%;
+  animation: ripple 3s linear infinite;
+  animation-delay: calc(-0.5s * var(--i));
+  background-color: #2e9a25;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: clamp(200px, 30vw, 350px);
+    height: clamp(200px, 30vw, 350px);
+    opacity: 0;
+  }
+}
+
+#user-picked img {
   height: 100%;
   width: 100%;
   object-fit: contain;
@@ -256,8 +288,14 @@ img {
   display: flex;
   justify-content: flex-end;
   gap: 1vw;
-  padding-right: 1vw;
-  margin-top: 32px;
+  width: 90%;
+
+  padding: 1rem;
+  margin: auto;
+  position: fixed;
+  bottom: 2.5vh;
+  right: 4vh;
+  z-index: 60;
 }
 
 .rules-btn,
@@ -272,40 +310,33 @@ img {
   letter-spacing: 1px;
   border: 2px solid white;
   border-radius: 10px;
+  position: relative;
+  z-index: 50;
+  cursor: pointer;
 }
 
 .result-section {
-  padding-top: 7rem;
-}
-
-.result-flex {
   display: flex;
-  width: 50vw;
-  margin: auto;
+  width: 65%;
+  margin: 14vh auto 0 auto;
 }
 
 .user-picked-wrapper {
-  width: 200px;
-  height: 350px;
   flex: 1;
   display: grid;
   place-content: center;
   gap: 40px;
 }
 .result-content {
-  width: 300px;
-  height: 350px;
   flex: 1;
-  display: grid;
-  place-items: center;
-  place-content: center;
-  gap: 10px;
-  /* border:1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 1rem;
 }
 .pc-picked-wrapper {
-  width: 200px;
-  height: 350px;
-  /* border:1px solid black; */
   display: grid;
   place-content: center;
   gap: 40px;
@@ -314,10 +345,9 @@ img {
 
 .win-loss {
   font-weight: 800;
-  /* font-size: 2.5rem; */
+
   font-size: clamp(24px, 3.25vw, 42px);
-  /* line-height: 45px; */
-  /* line-height: clamp(24px,3.25vw,42px); */
+
   line-height: clamp(25px, 2.5vw, 46px);
   color: #ffffff;
   letter-spacing: 1px;
@@ -326,9 +356,9 @@ img {
 
 .against-pc {
   font-weight: 800;
-  /* font-size: 1.5rem; */
+
   font-size: clamp(20px, 2.25vw, 38px);
-  /* line-height: 30px; */
+
   line-height: clamp(20px, 3vw, 36px);
   color: #ffffff;
   letter-spacing: 1px;
@@ -344,34 +374,93 @@ img {
   border-radius: 10px;
   letter-spacing: 1px;
   border: none;
+  position: relative;
+  z-index: 50;
+}
+
+.winner-wrapper {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  height: 80vh;
+  gap: 1rem;
+}
+
+.stars {
+  width: 504px;
+  height: 297px;
+  background: url("assets/stars.svg") no-repeat;
+
+  display: grid;
+  justify-content: center;
+  place-items: end;
+}
+
+.trophy {
+  width: 200px;
+  height: 200px;
+}
+
+.hurray {
+  font-weight: 600;
+
+  font-size: clamp(50px, 7vw, 90px);
+  line-height: 106px;
+  letter-spacing: 5px;
+  color: #ffffff;
+}
+
+.won-the-game {
+  font-family: 600;
+  font-size: 41px;
+  line-height: 48px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.winner-wrapper .play-again-btn {
+  margin: 1.5rem auto;
+  cursor: pointer;
 }
 
 .hide {
   display: none;
 }
 
-@media screen and (max-width: 678px) {
+@media screen and (max-width: 800px) {
+  main {
+    padding-top: 0.5rem;
+  }
   .scores-section {
+    flex-direction: column;
     width: 100%;
-    background-color: blue;
   }
   .triangle-shape {
     width: 100vw;
   }
 
   .result-section {
-    padding-top: 10px;
-  }
-
-  .result-flex {
     width: 90%;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 1vw;
+    margin-top: 1rem;
+  }
+
+  .result-content {
+    padding: 2rem;
+  }
+
+  .circle {
+    padding: 1rem;
   }
 
   .game-name {
-    display: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    font-size: 16px;
+    padding-bottom: 0.5rem;
   }
 
   .scores-wrapper {
@@ -379,6 +468,18 @@ img {
   }
 
   .buttons {
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+
+  .play-again-btn {
+    height: 30px;
+  }
+
+  .stars {
+    width: 100%;
+  }
+  .trophy {
+    width: 100px;
+    height: 100px;
   }
 }
